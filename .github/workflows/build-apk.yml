@@ -42,12 +42,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: KS-Medical-Stock-APK
-          path: project/app/build/outputs/apk/debug/app-debug.apk      - name: Build APK
-        working-directory: project
-        run: gradle :app:assembleDebug --no-daemon
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: KS-Medical-Stock-APK
           path: project/app/build/outputs/apk/debug/app-debug.apk
