@@ -30,6 +30,10 @@ jobs:
           mkdir project
           unzip -q KS_Medical_Stock_Android_APK_Project.zip -d project
 
+      -       - name: Fix Kotlin dependency conflict
+        run: |
+          echo 'configurations.all { exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib-jdk8" }' >> project/app/build.gradle
+
       - name: Build APK
         working-directory: project
         run: gradle :app:assembleDebug --no-daemon
